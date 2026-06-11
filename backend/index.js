@@ -24,6 +24,8 @@ const allowedOrigins = [
   process.env.FRONTEND_URL
 ].filter(Boolean)
 
+// CORS updated: allow Vercel frontend
+
 const io=new Server(server,{
    cors:{
     origin: allowedOrigins,
