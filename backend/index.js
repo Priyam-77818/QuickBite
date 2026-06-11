@@ -25,22 +25,15 @@ const allowedOrigins = [
 ].filter(Boolean)
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, curl, etc.)
-    if (!origin) return callback(null, true)
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true)
-    }
-    return callback(new Error('Not allowed by CORS'))
-  },
+  origin: true,  // Allow all origins
   credentials: true
 }
 
 const io=new Server(server,{
    cors:{
-    origin: allowedOrigins,
+    origin: true,
     credentials:true,
-    methods:['POST','GET']
+    methods:['POST','GET','PUT','DELETE','OPTIONS']
 }
 })
 
