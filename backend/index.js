@@ -20,6 +20,7 @@ const server=http.createServer(app)
 const allowedOrigins = [
   "http://localhost:5173",
   "https://quick-bite-udeg.vercel.app",
+  "https://quickbite-k7vg.onrender.com",
   process.env.FRONTEND_URL
 ].filter(Boolean)
 
